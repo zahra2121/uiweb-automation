@@ -12,4 +12,5 @@ import io.cucumber.junit.CucumberOptions;
         tags = "@valid-login or @invalid-login"
 )
 public class CucumberTest {
+
 }

@@ -41,6 +41,9 @@ jobs:
 
 
       # Setup gradlew and build project
+      - name: Build with Gradle (show deprecation warnings)
+        run: ./gradlew build --warning-mode=all
+
       - name: Setup gradlew and Build
         run: |
           chmod +x gradlew
@@ -49,6 +52,14 @@ jobs:
       # Run tests
       - name: Run Tests
         run: ./gradlew clean test
+
+        
+      - name: Upload Gradle Test Report
+        uses: actions/upload-artifact@v4.6.2
+        if: always()
+        with:
+          name: gradle-test-report
+          path: build/reports/tests/test
 
       # Archive test results (pastikan folder ini sesuai output test Anda)
       - name: Archive test results

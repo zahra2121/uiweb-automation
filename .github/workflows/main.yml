@@ -15,43 +15,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout repository
       - uses: actions/checkout@v4
 
+      # Setup Java 17
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
+      # Install Chrome and ChromeDriver
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v1.7.3
+        with:
+          chrome-version: stable
 
-      - name: Give permission to Gradle
-        run: chmod +x gradlew
-      
-      - name: Build with Gradle
-        run: ./gradlew clean build
-      
+      # Setup gradlew and build project
+      - name: Setup gradlew and Build
+        run: |
+          chmod +x gradlew
+          ./gradlew build
+
+      # Run tests
       - name: Run Tests
-        run: ./gradlew test
+        run: ./gradlew clean test
 
-     # Upload Gradle test reports
-      - name: Upload Gradle Test Reports
+      # Archive test results (pastikan folder ini sesuai output test Anda)
+      - name: Archive test results
         uses: actions/upload-artifact@v4.6.2
         if: always()
         with:
-          name: gradle-test-reports
-          path: build/reports/tests/test
-      
-      # Upload seluruh laporan jika perlu
-      - name: Upload All Reports
-        uses: actions/upload-artifact@v4.6.2
-        if: always()
-        with:
-          name: all-reports
+          name: Cucumber Reports
           path: build/reports
-      
-      # Deploy to GitHub Pages (gunakan folder yang sama)
+
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4.0.0

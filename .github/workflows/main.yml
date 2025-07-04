@@ -30,6 +30,15 @@ jobs:
         uses: browser-actions/setup-chrome@v1.7.3
         with:
           chrome-version: stable
+      
+      - name: Install matching ChromeDriver
+        run: |
+          LATEST=$(curl -sSL https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          wget https://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+
 
       # Setup gradlew and build project
       - name: Setup gradlew and Build

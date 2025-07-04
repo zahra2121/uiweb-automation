@@ -21,6 +21,7 @@ Framework ini mendukung pengujian positif, negatif, dan batasan.
 ## Jenis Pengujian
 - Positif: Login berhasil dengan kredensial benar 
 - Negatif: Login gagal dengan kredensial salah
+- Login dengan boundary value username dan password
 
 ## Cara Jalankan
 - ./gradlew test
@@ -28,5 +29,6 @@ Framework ini mendukung pengujian positif, negatif, dan batasan.
 
 Laporan HTML:
 Buka target/cucumber-report.html di browser.
+atau laporan Cucumber Reports Update.png
 
 

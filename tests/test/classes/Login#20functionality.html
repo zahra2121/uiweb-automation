@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">4.715s</div>
+<div class="counter">4.804s</div>
 <p>duration</p>
 </div>
 </td>
@@ -77,7 +77,7 @@
 <h3 class="failures">Login using invalid email and password</h3>
 <span class="code">
 <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir 
-Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.105'
+Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.228'
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1015-azure', java.version: '17.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
@@ -95,7 +95,7 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
 	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
 	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:51)
-	at app//stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:15)
+	at app//stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:17)
 	at ✽.user is on the login page(file:///home/runner/work/uiweb-automation/uiweb-automation/src/test/resources/features/login.feature:13)
 </pre>
 </span>
@@ -105,7 +105,7 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 <h3 class="failures">Login using valid email and password</h3>
 <span class="code">
 <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir 
-Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.105'
+Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.228'
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1015-azure', java.version: '17.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
@@ -123,7 +123,7 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
 	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
 	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:51)
-	at app//stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:15)
+	at app//stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:17)
 	at ✽.user is on the login page(file:///home/runner/work/uiweb-automation/uiweb-automation/src/test/resources/features/login.feature:5)
 </pre>
 </span>
@@ -141,12 +141,12 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 </thead>
 <tr>
 <td class="failures">Login using invalid email and password</td>
-<td class="failures">0.303s</td>
+<td class="failures">0.298s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Login using valid email and password</td>
-<td class="failures">4.412s</td>
+<td class="failures">4.506s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -159,7 +159,7 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 Scenario: Login using valid email and password   ?[90m# src/test/resources/features/login.feature:4?[0m
   ?[31mGiven ?[0m?[31muser is on the login page?[0m                ?[90m# stepdefinitions.LoginSteps.user_is_on_login_page()?[0m
       ?[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir 
-Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.105'
+Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.228'
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1015-azure', java.version: '17.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
@@ -177,7 +177,7 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
 	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
 	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:51)
-	at stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:15)
+	at stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:17)
 	at ✽.user is on the login page(file:///home/runner/work/uiweb-automation/uiweb-automation/src/test/resources/features/login.feature:5)
 ?[0m
   ?[36mAnd ?[0m?[36muser inputs username with ?[0m?[36m?[1m&quot;standard_user&quot;?[0m  ?[90m# stepdefinitions.LoginSteps.user_inputs_username(java.lang.String)?[0m
@@ -189,7 +189,7 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 Scenario: Login using invalid email and password                                                                    ?[90m# src/test/resources/features/login.feature:12?[0m
   ?[31mGiven ?[0m?[31muser is on the login page?[0m                                                                                   ?[90m# stepdefinitions.LoginSteps.user_is_on_login_page()?[0m
       ?[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir 
-Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.105'
+Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.228'
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1015-azure', java.version: '17.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
@@ -207,7 +207,7 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
 	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
 	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:51)
-	at stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:15)
+	at stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:17)
 	at ✽.user is on the login page(file:///home/runner/work/uiweb-automation/uiweb-automation/src/test/resources/features/login.feature:13)
 ?[0m
   ?[36mAnd ?[0m?[36muser inputs username with ?[0m?[36m?[1m&quot;standard&quot;?[0m                                                                          ?[90m# stepdefinitions.LoginSteps.user_inputs_username(java.lang.String)?[0m
@@ -225,7 +225,7 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.13</a> at Jul 4, 2025, 7:26:48 AM</p>
+<a href="https://www.gradle.org">Gradle 8.13</a> at Jul 4, 2025, 7:31:54 AM</p>
 </div>
 </div>
 </body>

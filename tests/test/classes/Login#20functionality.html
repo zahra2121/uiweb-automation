@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">14.118s</div>
+<div class="counter">12.186s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,32 +82,32 @@
 </thead>
 <tr>
 <td class="success">Login using invalid email and password</td>
-<td class="success">0.923s</td>
+<td class="success">0.901s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Login using valid email and password</td>
-<td class="success">9.278s</td>
+<td class="success">7.228s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Login with boundary value username and password #1</td>
-<td class="success">0.915s</td>
+<td class="success">0.930s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Login with boundary value username and password #2</td>
-<td class="success">0.923s</td>
+<td class="success">0.922s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Login with boundary value username and password #3</td>
-<td class="success">1.158s</td>
+<td class="success">0.896s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Login with boundary value username and password #4</td>
-<td class="success">0.921s</td>
+<td class="success">1.309s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -120,7 +120,7 @@
 Scenario: Login using valid email and password   # src/test/resources/features/login.feature:4
 ChromeDriver path: null
 Launching Chrome headless...
-Driver instance: ChromeDriver: chrome on linux (8592871e80e0a9734dad101a9250cb08)
+Driver instance: ChromeDriver: chrome on linux (8352a6f631bc73058145e58410c752a5)
   Given user is on the login page                # stepdefinitions.LoginSteps.user_is_on_login_page()
   And user inputs username with &quot;standard_user&quot;  # stepdefinitions.LoginSteps.user_inputs_username(java.lang.String)
   And user inputs password with &quot;secret_sauce&quot;   # stepdefinitions.LoginSteps.user_inputs_password(java.lang.String)
@@ -131,7 +131,7 @@ Driver instance: ChromeDriver: chrome on linux (8592871e80e0a9734dad101a9250cb08
 Scenario: Login using invalid email and password                                                                    # src/test/resources/features/login.feature:12
 ChromeDriver path: null
 Launching Chrome headless...
-Driver instance: ChromeDriver: chrome on linux (4cf21300107d61a5760685b597e60e9a)
+Driver instance: ChromeDriver: chrome on linux (13b63c2574c7ac0e3a88c7e8812dd131)
   Given user is on the login page                                                                                   # stepdefinitions.LoginSteps.user_is_on_login_page()
   And user inputs username with &quot;standard&quot;                                                                          # stepdefinitions.LoginSteps.user_inputs_username(java.lang.String)
   And user inputs password with &quot;wrong&quot;                                                                             # stepdefinitions.LoginSteps.user_inputs_password(java.lang.String)
@@ -142,7 +142,7 @@ Driver instance: ChromeDriver: chrome on linux (4cf21300107d61a5760685b597e60e9a
 Scenario Outline: Login with boundary value username and password                                              # src/test/resources/features/login.feature:29
 ChromeDriver path: null
 Launching Chrome headless...
-Driver instance: ChromeDriver: chrome on linux (603c5038edb25b2505d9b7ab87728883)
+Driver instance: ChromeDriver: chrome on linux (cac24c4aef032bd1b80fe35de21e1e03)
   Given user is on the login page                                                                              # stepdefinitions.LoginSteps.user_is_on_login_page()
   When user input &quot;a&quot; as username                                                                              # stepdefinitions.LoginSteps.userInputUsername(java.lang.String)
   And user input &quot;secret_sauce&quot; as password                                                                    # stepdefinitions.LoginSteps.userInputPassword(java.lang.String)
@@ -154,7 +154,7 @@ Actual error message: Epic sadface: Username and password do not match any user 
 Scenario Outline: Login with boundary value username and password                                              # src/test/resources/features/login.feature:30
 ChromeDriver path: null
 Launching Chrome headless...
-Driver instance: ChromeDriver: chrome on linux (b03adef6e73f382c01646d685c0a5f89)
+Driver instance: ChromeDriver: chrome on linux (82749e911d7cda96559fc5c4b6bd4b27)
   Given user is on the login page                                                                              # stepdefinitions.LoginSteps.user_is_on_login_page()
   When user input &quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot; as username                                                   # stepdefinitions.LoginSteps.userInputUsername(java.lang.String)
   And user input &quot;secret_sauce&quot; as password                                                                    # stepdefinitions.LoginSteps.userInputPassword(java.lang.String)
@@ -166,7 +166,7 @@ Actual error message: Epic sadface: Username and password do not match any user 
 Scenario Outline: Login with boundary value username and password                                              # src/test/resources/features/login.feature:31
 ChromeDriver path: null
 Launching Chrome headless...
-Driver instance: ChromeDriver: chrome on linux (227ad4bc0d06a866705507ec1fe2b3c3)
+Driver instance: ChromeDriver: chrome on linux (89c84ee4973f6aa689c1d588c5b758f8)
   Given user is on the login page                                                                              # stepdefinitions.LoginSteps.user_is_on_login_page()
   When user input &quot;standard_user&quot; as username                                                                  # stepdefinitions.LoginSteps.userInputUsername(java.lang.String)
   And user input &quot;a&quot; as password                                                                               # stepdefinitions.LoginSteps.userInputPassword(java.lang.String)
@@ -178,7 +178,7 @@ Actual error message: Epic sadface: Username and password do not match any user 
 Scenario Outline: Login with boundary value username and password                                              # src/test/resources/features/login.feature:32
 ChromeDriver path: null
 Launching Chrome headless...
-Driver instance: ChromeDriver: chrome on linux (2e11b05c672ac992747dc2c759827e70)
+Driver instance: ChromeDriver: chrome on linux (9fa3d540ec296f3923e99a1d707f95b1)
   Given user is on the login page                                                                              # stepdefinitions.LoginSteps.user_is_on_login_page()
   When user input &quot;standard_user&quot; as username                                                                  # stepdefinitions.LoginSteps.userInputUsername(java.lang.String)
   And user input &quot;aaaaaaaaaaaaaa&quot; as password                                                                  # stepdefinitions.LoginSteps.userInputPassword(java.lang.String)
@@ -191,29 +191,29 @@ Actual error message: Epic sadface: Username and password do not match any user 
 <div class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>Jul 04, 2025 1:14:18 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+<pre>Jul 04, 2025 1:17:03 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 137
-Jul 04, 2025 1:14:18 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Jul 04, 2025 1:17:03 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 137.0.7151.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Jul 04, 2025 1:14:21 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Jul 04, 2025 1:17:05 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 137
-Jul 04, 2025 1:14:21 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Jul 04, 2025 1:17:05 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 137.0.7151.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Jul 04, 2025 1:14:22 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Jul 04, 2025 1:17:06 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 137
-Jul 04, 2025 1:14:22 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Jul 04, 2025 1:17:06 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 137.0.7151.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Jul 04, 2025 1:14:22 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Jul 04, 2025 1:17:07 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 137
-Jul 04, 2025 1:14:22 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Jul 04, 2025 1:17:07 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 137.0.7151.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Jul 04, 2025 1:14:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Jul 04, 2025 1:17:08 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 137
-Jul 04, 2025 1:14:23 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Jul 04, 2025 1:17:08 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 137.0.7151.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Jul 04, 2025 1:14:25 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Jul 04, 2025 1:17:09 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 137
-Jul 04, 2025 1:14:25 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Jul 04, 2025 1:17:09 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 137.0.7151.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 </pre>
 </span>
@@ -226,7 +226,7 @@ WARNING: Unable to find version of CDP to use for 137.0.7151.119. You may need t
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.13</a> at Jul 4, 2025, 1:14:25 PM</p>
+<a href="https://www.gradle.org">Gradle 8.13</a> at Jul 4, 2025, 1:17:10 PM</p>
 </div>
 </div>
 </body>

@@ -15,55 +15,54 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
       - uses: actions/checkout@v4
 
-      # Setup Java 17
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      # Install Chrome and ChromeDriver (jika diperlukan untuk testing UI)
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v1.7.3
         with:
           chrome-version: stable
 
-      # Setup Maven and run tests
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Install ChromeDriver
+        run: |
+          CHROME_VERSION=$(google-chrome --version | grep -oP "\d+\.\d+\.\d+")
+          DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+          wget "https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip"
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+
+      - name: Give permission to Gradle
+        run: chmod +x gradlew
       
-      # Run Tests using Maven (bisa digabung dengan build, tapi dipisah jika ingin eksplisit)
+      - name: Build with Gradle
+        run: ./gradlew clean build
+      
       - name: Run Tests
-        run: mvn test
-      
-      # Archive test results (pastikan sesuai struktur Maven)
-      - name: Archive test results
-        uses: actions/upload-artifact@v4.6.2
-        if: always()
-        with:
-          name: TestNG Reports
-          path: target/surefire-reports  # lokasi default hasil test TestNG/JUnit di Maven
-      
-      # Archive test results (pastikan folder ini sesuai output test Anda)
-      - name: Archive test results
-        uses: actions/upload-artifact@v4.6.2
-        if: always()
-        with:
-          name: Cucumber Reports
-          path: build/reports
+        run: ./gradlew test
 
-      - name: Upload Test Report
-        uses: actions/upload-artifact@v4.3.1
+     # Upload Gradle test reports
+      - name: Upload Gradle Test Reports
+        uses: actions/upload-artifact@v4.6.2
         if: always()
         with:
-          name: web-test-report
+          name: gradle-test-reports
           path: build/reports/tests/test
-
-
-      # Deploy to GitHub Pages
+      
+      # Upload seluruh laporan jika perlu
+      - name: Upload All Reports
+        uses: actions/upload-artifact@v4.6.2
+        if: always()
+        with:
+          name: all-reports
+          path: build/reports
+      
+      # Deploy to GitHub Pages (gunakan folder yang sama)
       - name: Deploy to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4.0.0

@@ -25,32 +25,28 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      # Setup gradlew and build project
-      - name: Setup gradlew and Build
-        run: |
-          chmod +x gradlew
-          ./gradlew build
-
-      # Run tests
-      - name: Run Tests
-        run: ./gradlew clean test
-
-      # Install Chrome and ChromeDriver
+      # Install Chrome and ChromeDriver (jika diperlukan untuk testing UI)
       - name: Setup Chrome
-        run: |
-          sudo apt update
-          sudo apt install -y google-chrome-stable
+        uses: browser-actions/setup-chrome@v1.7.3
+        with:
+          chrome-version: stable
+
+      # Setup Maven and run tests
+      - name: Build with Maven
+        run: mvn clean install
       
-      - name: Setup ChromeDriver
-        run: |
-          sudo apt install -y unzip
-          LATEST=$(curl -sSL https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-          wget https://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
-          unzip chromedriver_linux64.zip
-          sudo mv chromedriver /usr/local/bin/
-          sudo chmod +x /usr/local/bin/chromedriver
-
-
+      # Run Tests using Maven (bisa digabung dengan build, tapi dipisah jika ingin eksplisit)
+      - name: Run Tests
+        run: mvn test
+      
+      # Archive test results (pastikan sesuai struktur Maven)
+      - name: Archive test results
+        uses: actions/upload-artifact@v4.6.2
+        if: always()
+        with:
+          name: TestNG Reports
+          path: target/surefire-reports  # lokasi default hasil test TestNG/JUnit di Maven
+      
       # Archive test results (pastikan folder ini sesuai output test Anda)
       - name: Archive test results
         uses: actions/upload-artifact@v4.6.2

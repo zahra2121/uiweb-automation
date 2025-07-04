@@ -19,6 +19,11 @@ public class Hook {
         options.addArguments("--window-size=1920,1080");
 
         driver = new ChromeDriver(options);
+
+        System.out.println("ChromeDriver path: " + System.getProperty("webdriver.chrome.driver"));
+        System.out.println("Launching Chrome headless...");
+        System.out.println("Driver instance: " + driver);
+
     }
 
     @After

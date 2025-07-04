@@ -25,12 +25,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      # Install Chrome and ChromeDriver
-      - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v1.7.3
-        with:
-          chrome-version: stable
-
       # Setup gradlew and build project
       - name: Setup gradlew and Build
         run: |
@@ -41,6 +35,22 @@ jobs:
       - name: Run Tests
         run: ./gradlew clean test
 
+      # Install Chrome and ChromeDriver
+      - name: Setup Chrome
+        run: |
+          sudo apt update
+          sudo apt install -y google-chrome-stable
+      
+      - name: Setup ChromeDriver
+        run: |
+          sudo apt install -y unzip
+          LATEST=$(curl -sSL https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          wget https://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+
+
       # Archive test results (pastikan folder ini sesuai output test Anda)
       - name: Archive test results
         uses: actions/upload-artifact@v4.6.2
@@ -48,6 +58,14 @@ jobs:
         with:
           name: Cucumber Reports
           path: build/reports
+
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v4.3.1
+        if: always()
+        with:
+          name: web-test-report
+          path: build/reports/tests/test
+
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages

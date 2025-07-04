@@ -26,11 +26,19 @@ jobs:
           distribution: 'temurin'
 
       # Install Chrome and ChromeDriver
-      - name: Setup Chrome
+      - name: Setup Chrome (versi 126 stabil)
         uses: browser-actions/setup-chrome@v1.7.3
         with:
-          chrome-version: stable
-          
+          chrome-version: 126.0.6478.126
+
+      - name: Install matching ChromeDriver for Chrome 126
+        run: |
+          VERSION=126.0.6478.126
+          wget https://chromedriver.storage.googleapis.com/${VERSION}/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/chromedriver
+          sudo chmod +x /usr/local/bin/chromedriver
+
       # Setup gradlew and build project
       - name: Give execute permission to Gradle wrapper
         run: chmod +x ./gradlew

@@ -31,12 +31,17 @@ jobs:
         with:
           chrome-version: stable
       
-      - name: Install matching ChromeDriver
+      # Hapus Chromedriver lama (versi tidak cocok)
+      - name: Remove old Chromedriver
+        run: sudo rm -f /usr/local/bin/chromedriver
+
+      # Install Chromedriver versi yang cocok dengan Chrome 137
+      - name: Install matching ChromeDriver for Chrome 137
         run: |
-          LATEST=$(curl -sSL https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-          wget https://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
+          VERSION=137.0.7151.119
+          wget https://chromedriver.storage.googleapis.com/${VERSION}/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip
-          sudo mv chromedriver /usr/local/bin/
+          sudo mv chromedriver /usr/local/bin/chromedriver
           sudo chmod +x /usr/local/bin/chromedriver
 
 

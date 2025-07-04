@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import hooks.Hook;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -7,8 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
 
 public class LoginSteps {
-    WebDriver driver;
+
     LoginPage loginPage;
+    WebDriver driver = Hook.driver;
 
     @Given("user is on the login page")
     public void user_is_on_login_page() {

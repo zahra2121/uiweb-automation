@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">4.804s</div>
+<div class="counter">0.098s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,26 +76,8 @@
 <a name="Login using invalid email and password"></a>
 <h3 class="failures">Login using invalid email and password</h3>
 <span class="code">
-<pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir 
-Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.228'
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1015-azure', java.version: '17.0.15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], binary: /usr/bin/google-chrome, extensions: []}}]}]
-	at app//org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
-	at app//org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
-	at app//org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
-	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at app//org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
-	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
-	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:51)
-	at app//stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:17)
+<pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:16)
 	at ✽.user is on the login page(file:///home/runner/work/uiweb-automation/uiweb-automation/src/test/resources/features/login.feature:13)
 </pre>
 </span>
@@ -104,26 +86,8 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 <a name="Login using valid email and password"></a>
 <h3 class="failures">Login using valid email and password</h3>
 <span class="code">
-<pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir 
-Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.228'
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1015-azure', java.version: '17.0.15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], binary: /usr/bin/google-chrome, extensions: []}}]}]
-	at app//org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
-	at app//org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
-	at app//org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
-	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at app//org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
-	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
-	at app//org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:51)
-	at app//stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:17)
+<pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:16)
 	at ✽.user is on the login page(file:///home/runner/work/uiweb-automation/uiweb-automation/src/test/resources/features/login.feature:5)
 </pre>
 </span>
@@ -141,12 +105,12 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 </thead>
 <tr>
 <td class="failures">Login using invalid email and password</td>
-<td class="failures">0.298s</td>
+<td class="failures">0.019s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Login using valid email and password</td>
-<td class="failures">4.506s</td>
+<td class="failures">0.079s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -158,26 +122,8 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 @valid-login
 Scenario: Login using valid email and password   ?[90m# src/test/resources/features/login.feature:4?[0m
   ?[31mGiven ?[0m?[31muser is on the login page?[0m                ?[90m# stepdefinitions.LoginSteps.user_is_on_login_page()?[0m
-      ?[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir 
-Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.228'
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1015-azure', java.version: '17.0.15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], binary: /usr/bin/google-chrome, extensions: []}}]}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:51)
-	at stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:17)
+      ?[31mjava.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:16)
 	at ✽.user is on the login page(file:///home/runner/work/uiweb-automation/uiweb-automation/src/test/resources/features/login.feature:5)
 ?[0m
   ?[36mAnd ?[0m?[36muser inputs username with ?[0m?[36m?[1m&quot;standard_user&quot;?[0m  ?[90m# stepdefinitions.LoginSteps.user_inputs_username(java.lang.String)?[0m
@@ -188,26 +134,8 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 @invalid-login
 Scenario: Login using invalid email and password                                                                    ?[90m# src/test/resources/features/login.feature:12?[0m
   ?[31mGiven ?[0m?[31muser is on the login page?[0m                                                                                   ?[90m# stepdefinitions.LoginSteps.user_is_on_login_page()?[0m
-      ?[31morg.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir 
-Host info: host: 'pkrvmbietmlfzoi', ip: '10.1.0.228'
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1015-azure', java.version: '17.0.15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], binary: /usr/bin/google-chrome, extensions: []}}]}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:232)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:161)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:51)
-	at stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:17)
+      ?[31mjava.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at stepdefinitions.LoginSteps.user_is_on_login_page(LoginSteps.java:16)
 	at ✽.user is on the login page(file:///home/runner/work/uiweb-automation/uiweb-automation/src/test/resources/features/login.feature:13)
 ?[0m
   ?[36mAnd ?[0m?[36muser inputs username with ?[0m?[36m?[1m&quot;standard&quot;?[0m                                                                          ?[90m# stepdefinitions.LoginSteps.user_inputs_username(java.lang.String)?[0m
@@ -225,7 +153,7 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.13</a> at Jul 4, 2025, 7:31:54 AM</p>
+<a href="https://www.gradle.org">Gradle 8.13</a> at Jul 4, 2025, 7:36:28 AM</p>
 </div>
 </div>
 </body>

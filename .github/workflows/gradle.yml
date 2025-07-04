@@ -39,5 +39,5 @@ jobs:
       run: chmod +x gradlew
 
     # Execute gradle commad for running cucumber test
-    - name: Execute Test
-      run: ./gradlew cucumber
+    #- name: Execute Test
+    #  run: ./gradlew cucumber

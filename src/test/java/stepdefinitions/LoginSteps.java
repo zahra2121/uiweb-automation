@@ -3,10 +3,14 @@ package stepdefinitions;
 import hooks.Hook;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.time.Duration;
 public class LoginSteps {
 
     LoginPage loginPage;
@@ -45,5 +49,31 @@ public class LoginSteps {
         String actualMessage = loginPage.getErrorMessage();
         Assert.assertEquals(expectedMessage, actualMessage);
         driver.quit();
+    }
+
+    @When("user input {string} as username")
+    public void userInputUsername(String username) {
+        loginPage.enterUsername(username);
+    }
+
+    @When("user input {string} as password")
+    public void userInputPassword(String password) {
+        loginPage.enterPassword(password);
+    }
+
+    @When("user click login button")
+    public void userClickLoginButton() {
+        loginPage.clickLogin();
+    }
+
+    @Then("user will see error message {string}")
+    public void userWillSeeErrorMessage(String expectedMessage) {
+        By errorMessageLocator = By.cssSelector("h3[data-test='error']");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        String actualMessage = wait
+                .until(ExpectedConditions.visibilityOfElementLocated(errorMessageLocator))
+                .getText();
+        System.out.println("Actual error message: " + actualMessage);
+        Assert.assertEquals("Error message does not match", expectedMessage, actualMessage);
     }
 }

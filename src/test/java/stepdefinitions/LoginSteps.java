@@ -4,7 +4,6 @@ import hooks.Hook;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
 
 public class LoginSteps {
@@ -14,7 +13,6 @@ public class LoginSteps {
 
     @Given("user is on the login page")
     public void user_is_on_login_page() {
-        driver = new ChromeDriver(); // gunakan WebDriverManager kalau perlu
         driver.get("https://www.saucedemo.com/");
         loginPage = new LoginPage(driver);
     }
@@ -37,13 +35,13 @@ public class LoginSteps {
     @Then("user should be redirected to the homepage")
     public void user_redirected_to_homepage() {
         Assert.assertTrue("User is not on homepage", loginPage.isOnHomepage());
-        driver.quit();
+
     }
 
     @Then("user should see an error message {string}")
     public void user_should_see_error_message(String expectedMessage) {
         String actualMessage = loginPage.getErrorMessage();
         Assert.assertEquals(expectedMessage, actualMessage);
-        driver.quit();
+
     }
 }

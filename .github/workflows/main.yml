@@ -27,38 +27,39 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      # 3. Install Chrome versi stabil (126.0.6478.126)
+      # 3. Install Chrome versi stabil (v126)
       - name: Setup Chrome (v126)
         uses: browser-actions/setup-chrome@v1.7.3
         with:
-          chrome-version: 126.0.6478.126
+          chrome-version: 126
 
       # 4. Remove chromedriver lama jika ada
       - name: Remove existing chromedriver
         run: sudo rm -f /usr/local/bin/chromedriver
 
-      # 5. Install ChromeDriver versi 126.0.6478.126
+      # 5. Install ChromeDriver versi yang cocok dengan Chrome 126
       - name: Install matching ChromeDriver
         run: |
-          VERSION=126.0.6478.126
+          VERSION=$(curl -sSL https://chromedriver.storage.googleapis.com/LATEST_RELEASE_126)
+          echo "Installing ChromeDriver version: $VERSION"
           wget https://chromedriver.storage.googleapis.com/${VERSION}/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip
-          sudo mv chromedriver /usr/local/bin/chromedriver
+          sudo mv chromedriver /usr/local/bin/
           sudo chmod +x /usr/local/bin/chromedriver
-       
-      # 4. Grant execute permission to Gradle wrapper
+
+      # 6. Grant execute permission to Gradle wrapper
       - name: Give permission to Gradle wrapper
         run: chmod +x ./gradlew
 
-      # 5. Build project with Gradle and show deprecation warnings
+      # 7. Build project with Gradle and show deprecation warnings
       - name: Build with Gradle
         run: ./gradlew build --warning-mode=all
 
-      # 6. Run tests
+      # 8. Run tests
       - name: Run Tests
         run: ./gradlew test
 
-      # 7. Upload test report
+      # 9. Upload test report
       - name: Upload Test Report
         uses: actions/upload-artifact@v4.6.2
         if: always()
@@ -66,7 +67,7 @@ jobs:
           name: gradle-test-report
           path: build/reports/tests/test
 
-      # 8. Deploy to GitHub Pages (optional)
+      # 10. Deploy to GitHub Pages (optional)
       - name: Deploy to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4.0.0

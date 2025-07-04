@@ -33,6 +33,16 @@ jobs:
         with:
           chrome-version: stable
 
+      - name: Log ChromeDriver Version
+        run: chromedriver --version
+      
+      - name: Log Chrome Version
+        run: google-chrome --version
+      
+      - name: Show PATH
+        run: echo $PATH
+
+
       # Grant execute permission to Gradle wrapper
       - name: Give permission to Gradle wrapper
         run: chmod +x ./gradlew
